@@ -1,4 +1,6 @@
-NAME	= molden-roll-test
-VERSION	= 1
-RELEASE	= 0
-RPM.EXTRAS         = AutoReq:No
+NAME       = sdsc-molden-roll-test
+VERSION    = 1
+RELEASE    = 1
+PKGROOT    = /root/rolltests
+
+RPM.EXTRAS = AutoReq:No

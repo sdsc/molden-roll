@@ -2,25 +2,18 @@
 
 <kickstart>
 
+<description>
+The molden Roll
+http://www.cmbi.ru.nl/molden/
+</description>
 
-	<description>
-	Your molden roll description here
-	</description>
+<copyright>
+Copyright (c) 2000 - 2014 The Regents of the University of California.
+All rights reserved. Rocks(r) v5.5/v6.0 www.rocksclusters.org
+</copyright>
 
-	<copyright>
-	Copyright (c) 2000 - 2012 The Regents of the University of California.
-	All rights reserved. Rocks(r) v5.5/v6.0 www.rocksclusters.org
-	
-	</copyright>
-
-	<changelog>
-	$Log$
-	</changelog>
-
-	<package>molden</package>
-	<package>molden-modules</package>
-        <package>molden-roll-test</package>
-	<package>roll-molden-usersguide</package>
-
+<package>sdsc-molden</package>
+<package>sdsc-molden-modules</package>
+<package>sdsc-molden-roll-test</package>
 
 </kickstart>

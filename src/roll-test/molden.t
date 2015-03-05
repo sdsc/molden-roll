@@ -22,12 +22,12 @@ if($appliance =~ /$installedOnAppliancesPattern/) {
 }
 SKIP: {
 
-  skip 'molden not installed', 4 if ! $isInstalled;
-  $output=`. /etc/profile.d/modules.sh; module load molden;molden 2>&1`;
+  skip 'molden not installed', 5 if ! $isInstalled;
+  $output=`module load molden; molden 2>&1`;
   ok($output =~ /Molden: cannot connect to X server/, 'molden exectutable starts');
-  $output=`. /etc/profile.d/modules.sh; module load molden;gmolden 2>&1`;
+  $output=`module load molden; gmolden 2>&1`;
   ok($output =~ /Molden: cannot connect to X server/, 'gmolden exectutable starts');
-  skip 'modules not installed', 3 if ! -f '/etc/profile.d/modules.sh';
+
   `/bin/ls /opt/modulefiles/applications/molden/[0-9.]* 2>&1`;
   ok($? == 0, 'molden module installed');
   `/bin/ls /opt/modulefiles/applications/molden/.version.[0-9.]* 2>&1`;

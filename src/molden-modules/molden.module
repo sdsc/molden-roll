@@ -1,2 +1,6 @@
 #%Module1.0
+module-whatis "molden"
+module-whatis "Version: VERSION"
+module-whatis "Description: molden"
+setenv MOLDENHOME /opt/molden
 prepend-path PATH /opt/molden/bin

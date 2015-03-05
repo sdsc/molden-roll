@@ -53,14 +53,24 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # 
 # @Copyright@
-#
-# $Log$
 
 REDHAT.ROOT = $(CURDIR)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
-include pull.mk
+include $(SDSCDEVEL)/Pull.mk
+include $(SDSCDEVEL)/Rules.mk
+
+$(NAME).spec: DESCRIPTION LICENSE
+
+DESCRIPTION:
+	( \
+	  $(DESCRIBE_PKG); \
+	) > $@
+
+LICENSE: $(SRC_DIRS)
+	$(CHECK_LICENSE_FILES)
+	echo Gijs Schaftenaar > $@
 
 build: $(SRC_DIRS)
 	( \
@@ -74,12 +84,10 @@ install::
 	mkdir -p $(ROOT)/$(PKGROOT)/bin
 	( \
 	  cd $(SOURCE_DIR); \
-	  cp molden gmolden $(ROOT)/$(PKGROOT)/bin; \
-	  cp surf/surf $(ROOT)/$(PKGROOT)/bin; \
-	  cp ambfor/ambmd $(ROOT)/$(PKGROOT)/bin; \
-	  cp ambfor/ambfor $(ROOT)/$(PKGROOT)/bin; \
+	  cp molden gmolden surf/surf ambfor/{ambmd,ambfor} \
+	     $(ROOT)/$(PKGROOT)/bin; \
 	)
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
-	rm -rf $(SOURCE_DIR)
+	rm -rf $(SOURCE_DIR) DESCRIPTION LICENSE
