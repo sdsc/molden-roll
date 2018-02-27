@@ -1,6 +1,6 @@
 NAME           = sdsc-molden
 VERSION        = 5.0.7
-RELEASE        = 1
+RELEASE        = 2
 PKGROOT        = /opt/molden
 
 SRC_SUBDIR     = molden
@@ -13,4 +13,5 @@ SOURCE_DIR     = $(SOURCE_NAME)$(SOURCE_VERSION)
 
 TAR_GZ_PKGS    = $(SOURCE_PKG)
 
-RPM.EXTRAS     = AutoReq:No
+RPM.EXTRAS     = AutoReq:No\nAutoProv:No
+RPM.PREFIX     = $(PKGROOT)
