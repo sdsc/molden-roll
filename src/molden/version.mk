@@ -1,13 +1,13 @@
 NAME           = sdsc-molden
-VERSION        = 5.0.7
-RELEASE        = 2
+VERSION        = 5.9
+RELEASE        = 0
 PKGROOT        = /opt/molden
 
 SRC_SUBDIR     = molden
 
 SOURCE_NAME    = molden
 SOURCE_SUFFIX  = tar.gz
-SOURCE_VERSION = 5.0
+SOURCE_VERSION = $(VERSION)
 SOURCE_PKG     = $(SOURCE_NAME)$(VERSION).$(SOURCE_SUFFIX)
 SOURCE_DIR     = $(SOURCE_NAME)$(SOURCE_VERSION)
 
