@@ -74,7 +74,8 @@ LICENSE: $(SRC_DIRS)
 build: $(SRC_DIRS)
 	( \
 	  cd $(SOURCE_DIR); \
-	  ./configure --prefix=$(PKGROOT); \
+          export CC=gcc; \
+          export FC=gfortran; \
 	  $(MAKE); \
 	)
 	@echo "::: Package $(NAME) build complete :::"
